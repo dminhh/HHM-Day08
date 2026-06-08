@@ -171,7 +171,57 @@ run_dashboard()
 ## Kiến Trúc Hệ Thống
 
 ```
-[Vẽ diagram kiến trúc ở đây]
+┌──────────────────────────────────────────────────────────────┐
+│                    USER INTERFACE                             │
+│              Streamlit Chatbot (app.py)                      │
+│     Conversation Memory │ Source Display │ Citation          │
+└────────────────────────┬─────────────────────────────────────┘
+                         │ query
+                         ▼
+┌──────────────────────────────────────────────────────────────┐
+│                 RETRIEVAL PIPELINE (Task 9)                   │
+│                                                              │
+│  ┌──────────────────┐        ┌──────────────────────────┐   │
+│  │  Semantic Search  │        │    Lexical Search        │   │
+│  │    (Task 5)       │        │    BM25 (Task 6)         │   │
+│  │  FAISS + bge-m3   │        │    rank-bm25             │   │
+│  └────────┬─────────┘        └───────────┬──────────────┘   │
+│           └──────────────┬───────────────┘                   │
+│                          ▼                                    │
+│                 ┌─────────────────┐                          │
+│                 │  Merge + Dedup  │                          │
+│                 └────────┬────────┘                          │
+│                          ▼                                    │
+│                 ┌─────────────────┐                          │
+│                 │  Reranking RRF  │  ◄── Task 7              │
+│                 └────────┬────────┘                          │
+│                          │  score < threshold?               │
+│                          ▼                                    │
+│                 ┌─────────────────┐                          │
+│                 │    Fallback     │                          │
+│                 │ PageIndex (T8)  │                          │
+│                 └────────┬────────┘                          │
+└──────────────────────────┼───────────────────────────────────┘
+                           │ top-k chunks
+                           ▼
+┌──────────────────────────────────────────────────────────────┐
+│                GENERATION PIPELINE (Task 10)                  │
+│                                                              │
+│  1. Reorder chunks (Lost-in-the-Middle prevention)           │
+│  2. Format context với source metadata                       │
+│  3. LLM (GPT-4o-mini) + System Prompt → Citation answer     │
+└──────────────────────────┬───────────────────────────────────┘
+                           │ answer + sources
+                           ▼
+                    ┌─────────────┐
+                    │  Response   │
+                    │ + Citations │
+                    └─────────────┘
+
+DATA FLOW:
+  vbpl.vn (DOC) ──┐
+                   ├→ data/landing/ → antiword/MarkItDown
+  Crawl4AI (JSON)─┘      → data/standardized/ → FAISS index (bge-m3)
 ```
 
 ---
@@ -180,9 +230,9 @@ run_dashboard()
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| Nguyễn Đức Hiếu | 2A202600680 | Chatbot UI (Streamlit/Chainlit) + conversation memory + tích hợp pipeline các thành viên | Chưa bắt đầu |
-| Nguyễn Thành Huy | 2A202600764 | Golden dataset (≥15 Q&A) + eval_pipeline.py + chạy 4 metrics (Faithfulness, Answer Relevance, Context Recall, Context Precision) | Chưa bắt đầu |
-| Hồ Đức Minh | 2A202600888 | A/B comparison (≥2 configs) + results.md (bảng điểm + worst performers) + README + architecture diagram | Chưa bắt đầu |
+| Nguyễn Đức Hiếu | 2A202600680 | Chatbot UI (Streamlit/Chainlit) + conversation memory + tích hợp pipeline các thành viên | Hoàn thành |
+| Nguyễn Thành Huy | 2A202600764 | Golden dataset (≥15 Q&A) + eval_pipeline.py + chạy 4 metrics (Faithfulness, Answer Relevance, Context Recall, Context Precision) | Hoàn thành |
+| Hồ Đức Minh | 2A202600888 | A/B comparison (≥2 configs) + results.md (bảng điểm + worst performers) + README + architecture diagram | Hoàn thành |
 
 ### Chi Tiết Nhiệm Vụ
 
@@ -208,13 +258,23 @@ run_dashboard()
 ## Hướng Dẫn Chạy
 
 ```bash
-# Cài đặt dependencies
-pip install -r requirements.txt
+# 1. Clone repo
+git clone https://github.com/dminhh/HHM-Day08.git
+cd HHM-Day08
 
-# Chạy app
+# 2. Cài đặt dependencies
+pip install -r group_project/requirements.txt
+
+# 3. Tạo file .env và điền API key
+cp .env.example .env
+# Điền OPENAI_API_KEY vào .env
+
+# 4. Chạy Streamlit chatbot
+cd group_project
 streamlit run app.py
-# hoặc
-chainlit run app.py
+
+# 5. (Tuỳ chọn) Chạy evaluation pipeline
+python -m group_project.evaluation.eval_pipeline
 ```
 
 ---
