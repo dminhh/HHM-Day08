@@ -1,17 +1,77 @@
 [
   {
-    "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Điều 249 Bộ luật Hình sự?",
-    "expected_answer": "Phạt tù từ 1 đến 5 năm đối với trường hợp tàng trữ từ 1g đến dưới 5g heroin hoặc cocaine, hoặc chất ma tuý khác với khối lượng tương đương.",
-    "expected_context": "Bộ luật Hình sự 2015, Điều 249"
+    "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Điều 249 Bộ luật Hình sự là gì?",
+    "expected_answer": "Người phạm tội bị phạt tù từ 1 đến 5 năm ở khung cơ bản. Trường hợp tàng trữ số lượng lớn (từ 100g đến dưới 1kg heroin hoặc cocaine) có thể bị phạt tù từ 7 đến 15 năm. Trường hợp đặc biệt nghiêm trọng (từ 1kg trở lên) có thể bị phạt tù 20 năm hoặc tù chung thân.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 249 — Tội tàng trữ trái phép chất ma túy"
   },
   {
     "question": "Luật Phòng chống ma tuý 2021 quy định những hình thức cai nghiện nào?",
-    "expected_answer": "Cai nghiện tự nguyện tại gia đình, cai nghiện tự nguyện tại cộng đồng, cai nghiện tự nguyện tại cơ sở cai nghiện, và cai nghiện bắt buộc tại cơ sở cai nghiện.",
-    "expected_context": "Luật Phòng chống ma tuý 2021, Chương V"
+    "expected_answer": "Có 4 hình thức cai nghiện: (1) cai nghiện tự nguyện tại gia đình, (2) cai nghiện tự nguyện tại cộng đồng, (3) cai nghiện tự nguyện tại cơ sở cai nghiện ma túy, và (4) cai nghiện bắt buộc tại cơ sở cai nghiện ma túy do Nhà nước quyết định.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Chương V — Cai nghiện ma túy"
   },
   {
     "question": "Danh mục các chất ma tuý thuộc nhóm I theo quy định pháp luật Việt Nam gồm những chất nào?",
-    "expected_answer": "Nhóm I gồm các chất ma tuý tuyệt đối cấm sử dụng trong y học và đời sống, bao gồm heroin, cocaine, methamphetamine, MDMA (ecstasy), cannabis (cần sa), và các chất tương tự.",
-    "expected_context": "Nghị định 57/2022/NĐ-CP, Phụ lục I"
+    "expected_answer": "Nhóm I gồm các chất ma tuý tuyệt đối cấm sử dụng trong y học và đời sống xã hội, bao gồm heroin, cocaine, methamphetamine, MDMA (ecstasy), cannabis (cần sa), và các chất tương tự theo Nghị định 57/2022/NĐ-CP.",
+    "expected_context": "Nghị định 57/2022/NĐ-CP, Phụ lục I — Danh mục chất ma túy nhóm I"
+  },
+  {
+    "question": "Hình phạt cao nhất cho tội mua bán trái phép chất ma tuý theo Bộ luật Hình sự là gì?",
+    "expected_answer": "Theo Điều 251 Bộ luật Hình sự 2015, hình phạt cao nhất là tử hình, áp dụng khi mua bán số lượng đặc biệt lớn (từ 1kg heroin hoặc cocaine trở lên, hoặc tương đương với các chất khác).",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 251 — Tội mua bán trái phép chất ma túy"
+  },
+  {
+    "question": "Tội vận chuyển trái phép chất ma tuý được quy định tại điều nào và khung hình phạt cơ bản là bao nhiêu?",
+    "expected_answer": "Tội vận chuyển trái phép chất ma túy được quy định tại Điều 250 Bộ luật Hình sự 2015. Khung hình phạt cơ bản là phạt tù từ 2 đến 7 năm. Các khung tăng nặng có thể lên đến 15 năm, 20 năm, tù chung thân hoặc tử hình tuỳ theo số lượng và tình tiết.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 250 — Tội vận chuyển trái phép chất ma túy"
+  },
+  {
+    "question": "Người sử dụng trái phép chất ma tuý bị xử lý như thế nào theo Bộ luật Hình sự?",
+    "expected_answer": "Theo Điều 258 Bộ luật Hình sự, người sử dụng trái phép chất ma túy bị phạt cảnh cáo, phạt tiền từ 1 triệu đến 5 triệu đồng, hoặc phạt tù từ 3 tháng đến 2 năm. Ngoài hình phạt chính, có thể bị áp dụng biện pháp cai nghiện bắt buộc.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 258 — Tội sử dụng trái phép chất ma túy"
+  },
+  {
+    "question": "Tội tổ chức sử dụng trái phép chất ma tuý theo Điều 255 bị phạt bao nhiêu năm tù?",
+    "expected_answer": "Theo Điều 255 Bộ luật Hình sự, người tổ chức sử dụng trái phép chất ma túy bị phạt tù từ 2 đến 7 năm ở khung cơ bản. Các khung tăng nặng: 7-15 năm, 15-20 năm, hoặc tù chung thân.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 255 — Tội tổ chức sử dụng trái phép chất ma túy"
+  },
+  {
+    "question": "Điều kiện để áp dụng biện pháp cai nghiện bắt buộc theo Luật Phòng chống ma tuý 2021?",
+    "expected_answer": "Cai nghiện bắt buộc áp dụng với người nghiện ma túy từ đủ 18 tuổi trở lên thuộc một trong các trường hợp: không đăng ký tự nguyện cai nghiện, trong thời gian cai nghiện tự nguyện bỏ trốn hoặc vi phạm quy chế, hoặc đã cai nghiện tự nguyện nhưng tái nghiện. Thời gian cai nghiện bắt buộc từ 12 đến 24 tháng.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 29-32 — Cai nghiện bắt buộc"
+  },
+  {
+    "question": "Tiền chất ma tuý là gì và được kiểm soát như thế nào theo pháp luật Việt Nam?",
+    "expected_answer": "Tiền chất ma túy là hoá chất không thể thiếu trong quá trình điều chế, sản xuất chất ma túy. Theo Luật Phòng chống ma túy 2021, tiền chất được kiểm soát chặt chẽ: phải có giấy phép xuất nhập khẩu, sản xuất, mua bán; phải khai báo và được cơ quan chức năng theo dõi.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Chương III — Kiểm soát các hoạt động hợp pháp liên quan đến ma túy"
+  },
+  {
+    "question": "Tội chứa chấp việc sử dụng trái phép chất ma tuý theo Điều 256 bị xử lý thế nào?",
+    "expected_answer": "Theo Điều 256 Bộ luật Hình sự, người chứa chấp việc sử dụng trái phép chất ma túy bị phạt tù từ 2 đến 7 năm ở khung cơ bản. Khung tăng nặng: 7-15 năm hoặc 15-20 năm nếu phạm tội có tổ chức, tại cơ sở kinh doanh, hoặc đối với người chưa thành niên.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 256 — Tội chứa chấp việc sử dụng trái phép chất ma túy"
+  },
+  {
+    "question": "Trách nhiệm của gia đình trong công tác phòng chống ma tuý theo Luật Phòng chống ma tuý 2021?",
+    "expected_answer": "Theo Luật Phòng chống ma tuý 2021, gia đình có trách nhiệm: giáo dục thành viên về tác hại và cách phòng tránh ma túy; phát hiện và thông báo kịp thời khi thành viên có dấu hiệu nghiện; phối hợp với cơ quan, tổ chức trong quản lý và hỗ trợ người nghiện cai nghiện; hỗ trợ người sau cai nghiện tái hoà nhập cộng đồng.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 6 — Trách nhiệm của gia đình"
+  },
+  {
+    "question": "Hình phạt cho tội sản xuất trái phép chất ma tuý theo Điều 248 Bộ luật Hình sự?",
+    "expected_answer": "Theo Điều 248 Bộ luật Hình sự 2015, tội sản xuất trái phép chất ma túy bị phạt tù từ 2 đến 7 năm ở khung cơ bản. Khung tăng nặng: 7-15 năm, 15-20 năm, hoặc tù chung thân/tử hình trong trường hợp đặc biệt nghiêm trọng (sản xuất từ 1kg heroin hoặc cocaine trở lên).",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 248 — Tội sản xuất trái phép chất ma túy"
+  },
+  {
+    "question": "Cơ sở pháp lý nào quy định danh mục các chất ma tuý tại Việt Nam hiện hành?",
+    "expected_answer": "Danh mục các chất ma túy tại Việt Nam được quy định tại Nghị định 57/2022/NĐ-CP của Chính phủ, ban hành danh mục chất ma túy, tiền chất và thuốc gây nghiện, thuốc hướng thần. Danh mục được chia thành 3 nhóm theo mức độ nguy hiểm và khả năng sử dụng trong y tế.",
+    "expected_context": "Nghị định 57/2022/NĐ-CP — Danh mục chất ma túy và tiền chất"
+  },
+  {
+    "question": "Chính sách phòng chống ma tuý trong trường học được quy định như thế nào theo Luật 2021?",
+    "expected_answer": "Theo Luật Phòng chống ma tuý 2021, cơ sở giáo dục có trách nhiệm: tổ chức tuyên truyền, giáo dục phòng chống ma túy cho học sinh, sinh viên; phối hợp với gia đình và cơ quan chức năng phát hiện, xử lý vi phạm; xây dựng môi trường học đường không ma túy.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 8 — Trách nhiệm của cơ sở giáo dục"
+  },
+  {
+    "question": "Người từ đủ 12 đến dưới 18 tuổi nghiện ma tuý bị áp dụng biện pháp gì theo Luật Phòng chống ma tuý?",
+    "expected_answer": "Người nghiện ma túy từ đủ 12 đến dưới 18 tuổi được áp dụng biện pháp giáo dục tại xã, phường, thị trấn (thời gian từ 3 đến 6 tháng) hoặc đưa vào cơ sở cai nghiện ma túy bắt buộc theo quyết định của Toà án nhân dân. Ưu tiên áp dụng biện pháp cai nghiện tự nguyện trước.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 33 — Cai nghiện ma túy đối với người chưa thành niên"
   }
 ]
