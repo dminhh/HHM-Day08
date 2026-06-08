@@ -2,11 +2,11 @@
 
 ## Thành Viên Nhóm
 
-| Thành viên | MSSV | GitHub branch cá nhân |
-|-----------|------|----------------------|
-| Nguyễn Đức Hiếu | 2A202600680 | `personal/2A202600680-NguyenDucHieu` |
+| Thành viên | MSSV | GitHub branch cá nhân                 |
+|-----------|------|---------------------------------------|
+| Nguyễn Đức Hiếu | 2A202600680 | `personal/2A202600680-NguyenDucHieu`  |
 | Nguyễn Thành Huy | 2A202600764 | `personal/2A202600764-NguyenThanhHuy` |
-| Hồ Đức Minh | 2A202600888 | `personal/2A202600888-HoDucMinh` |
+| Hồ Đức Minh | 2A202600888 | `ducminh`                             |
 
 ---
 
