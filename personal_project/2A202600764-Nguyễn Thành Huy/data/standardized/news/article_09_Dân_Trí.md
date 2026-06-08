@@ -1,0 +1,44 @@
+# Trước ca sĩ Chu Bin, loạt nghệ sĩ nổi tiếng vướng lao lý vì ma túy
+
+**Nguồn:** Dân Trí
+**URL:** https://dantri.com.vn/phap-luat/truoc-ca-si-chu-bin-loat-nghe-si-noi-tieng-vuong-lao-ly-vi-ma-tuy-20240608123002810.htm
+**Ngày đăng:** 
+**Ngày crawl:** 2026-06-08T14:12:20.155757
+
+---
+
+Liên quan đến vụ ca sĩ Chu Bin cùng nhiều người khác bị tạm giữ để điều tra về hành vi Tổ chức, sử dụng trái phép chất ma túy, Công an quận 10 vẫn đang làm rõ vai trò của những người liên quan.
+
+Trước khi ca sĩ Chu Bin gây ồn ào vì dính đến "chất cấm", nhiều nghệ sĩ nổi tiếng khác đã thân bại danh liệt, thậm chí lâm cảnh tù tội vì ma túy.
+
+Một vụ án mạng "chấn động" xảy ra vào tháng 3/2018, khi một cô gái tử vong bởi 30 nhánh tỏi bị nhét vào miệng. Vụ việc còn nóng hơn khi hung thủ gây án là ca sĩ Châu Việt Cường.
+
+Theo nội dung bản án, tối 4/3/2018, Châu Việt Cường sau khi đi diễn ở Hà Nam thì về nhà Phạm Đức Thế (quận Ba Đình, TP Hà Nội) ngủ nhờ, để sáng hôm sau đi biểu diễn ở TPHCM.
+
+Trước khi đến, Châu Việt Cường còn gọi cho Đoàn Quý Nguyên (tức ca sĩ Nam Khang) rủ tới nhà Thế chơi cùng. Nam Khang gọi điện cho Đ.P.A., 24 tuổi và T.M.H. cùng tới nhà Thế.
+
+Tại đây, cả nhóm cùng nhau sử dụng ma túy do chủ nhà chuẩn bị trước. Hết số ma túy trên, Cường đem ma túy của mình ra dùng tiếp. Trong lúc sử dụng ma túy, Cường và Thế đã quan hệ với chị T.M.H..
+
+Ca sĩ Châu Việt Cường lãnh 11 năm tù về tội Giết người (Ảnh: T.T.).
+
+Sáng hôm sau, Cường mang đồ ra sân bay nhưng đi được khoảng 10 phút đã quay lại nhà Thế. Lúc này, Cường và chị H. đều có biểu hiện bị ảo giác. Cả hai ngồi khóc lóc, vái lạy nhau.
+
+Cho rằng chị H. bị ma nhập, Cường chạy xuống sân lấy tỏi mang lên. Cường tự ăn tỏi và nhét hơn 30 nhánh tỏi, củ tỏi vào miệng chị H. khiến nạn nhân tử vong vì ngạt thở.
+
+Với tội ác mà mình gây ra, Châu Việt Cường bị TAND TP Hà Nội tuyên án 13 năm tù về tội Giết người hồi tháng 3/2019. 5 tháng sau, tòa cấp phúc thẩm giảm án cho nam ca sĩ còn 11 năm tù về tội danh trên.
+
+Tháng 6/2022, mạng xã hội lan truyền hình ảnh nam diễn viên Hữu Tín bị còng tay, bên cạnh là khay và thẻ nhựa dùng để hút ma túy. Thời điểm ấy, nam diễn viên đang có sự nghiệp đang lên, tham gia nhiều gameshow truyền hình nổi tiếng.
+
+Hình ảnh diễn viên Hữu Tín bị bắt nhanh chóng gây sốt trên mạng xã hội, công an khi ấy phải thông tin để trấn an dự luận.
+
+Theo điều tra, Trần Hữu Tín có mối quan hệ quen biết và sống chung với Nguyễn Hoàng Phi tại chung cư trên. Giữa tháng 5/2022, Phi cùng bạn đi hát karaoke ở quận 5 và cùng sử dụng ma túy. Khi ra về, Phi thấy còn dư ma túy nên đem về cất tại phòng ngủ.
+
+Diễn viên Hữu Tín bị còng tay vì phạm tội liên quan ma túy (Ảnh: Công an cung cấp).
+
+Tối 10/6/2022, Hữu Tín rủ một số người bạn đi nhậu, sau đó tất cả về chung cư Giai Việt nghỉ ngơi. Hữu Tín vào phòng ngủ của Phi, thấy đĩa sành chứa ma túy và thuốc lắc nên lấy một nửa viên thuốc lắc chia đôi ra cùng một cô gái sử dụng rồi đi ngủ.
+
+Sau đó, Phi đi làm về biết Hữu Tín cùng bạn sử dụng ma túy nên Phi chỉnh nhạc tạo cảm giác hưng phấn. Đến 4h ngày 11/6, một cô gái khác đến căn hộ và được Phi đưa ma túy cho sử dụng. Phi tiếp tục chỉnh nhạc lớn để Hữu Tín cùng 2 người cô gái "bay lắc".
+
+Sáng 11/6/2022, Công an phường 5, quận 8, kiểm tra căn hộ tại chung cư Giai Việt, phát hiện Hữu Tín cùng một số người khác dương tính ma túy nên đưa về trụ sở để điều tra.
+
+Đến tháng 4/2023, Hữu Tín bị TAND quận 8, TPHCM tuyên phạt 7 năm 6 tháng tù về tội Tổ chức sử dụng trái phép chất ma túy.

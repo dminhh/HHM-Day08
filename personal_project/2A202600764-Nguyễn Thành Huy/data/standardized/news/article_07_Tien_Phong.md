@@ -1,0 +1,48 @@
+# Nhiều nghệ sĩ Việt bị bắt vì dính vào ma túy
+
+**Nguồn:** Tiền Phong
+**URL:** https://tienphong.vn/nhieu-nghe-si-viet-bi-bat-vi-dinh-vao-ma-tuy-post1649760.tpo
+**Ngày đăng:** 27/06/2024 14:16
+**Ngày crawl:** 2026-06-08T14:12:16.426859
+
+---
+
+*TPO - Không ít nghệ sĩ nhận bản án tù vì tàng trữ, mua bán, sử dụng ma túy. Trước vụ việc người mẫu Đinh Nhi Ko Lai bị bắt hôm 25/6, diễn viên Hiệp Gà, Lệ Hằng, Hữu Tín... cũng từng vướng vào vòng lao lý.*
+
+---
+
+Ngày 25/6, Công an quận 1, TP.HCM khởi tố,tạm giamngười mẫuĐinh Nhi Ko Lai cùng nhiều đối tượng khác về hành vi tàng trữ trái phép chất ma túy. Trước khi bị bắt Đinh Nhi Ko Lai (hay còn được biết đến là Nhikolai Đinh) là người mẫu, diễn viên góp mặt trong nhiều MV của các ca sĩ như Bích Phương, Hồ Ngọc Hà...
+
+Trước Đinh Nhi Ko Lai, không ít nghệ sĩtiêu tan sự nghiệpvì dính tới chất cấm. Cách đây chưa đầy một tháng, Chu Đăng Thanh (ca sĩ Chu Bin) bị tạm giữ để điều tra về hành vi tổ chức,sử dụng trái phép chất ma túy. Chu Bin có sự nghiệp âm nhạc không nổi bật, từng tham gia cuộc thiVietnam Idolnhưng chỉ lọt Top 30.
+
+Trước khi bị bắt vì sử dụng trái phép chất ma túy, Chu Bin có sự nghiệp âm nhạc không nổi bật.
+
+Trong tháng 4/2023, hai diễn viênLệ Hằngvà Hữu Tín cùng vướng vào vòng lao lý. Ngày 23/4, Công an quận Đống Đa, TP. Hà Nội khởi tố bị can đối với Bùi Thị Lệ Hằng (diễn viên Lệ Hằng) về tội mua bán trái phép chất ma túy. Lực lượng chức năng phát hiện Lệ Hằng mua bán trái phép ma túy tại phố Khâm Thiên.
+
+Qua quá trình làm việc, lực lượng chức năng thu giữ tang vật gần 0,7 gram ma túy tổng hợp. Tại trụ sở điều tra, Lệ Hằng khai nhận mua số ma túy trên với giá 500.000 đồng để bán lại kiếm lời.
+
+Lệ Hằng nổi tiếng nhờ các vai Bảo trongNhững ngọn nến trong đêm, Thanh sói trongCổ cồn trắng, Hoài "Thatcher" trong phimXin hãy tin em. Năm 2012, nữ diễn viên tuyên bố giải nghệ và mất tích từ đó.
+
+Ngày 28/4/2023, TAND Quận 8 (TP.HCM) tuyên phạt bị cáo TrầnHữu Tín(diễn viên hài Hữu Tín) 7 năm 6 tháng tù về tội “tổ chức sử dụng trái phép chất ma túy”.
+
+Tại phiên tòa, bị cáoTrần Hữu Tínthừa nhận hành vi phạm tội, nói rằng biết ma túy có tác hại lớn đến sức khỏe, do có uống bia rượu không kiềm chế được nên sử dụngma túy. Trước khi bị bắt, Hữu Tín là diễn viên hài nổi tiếng phía Nam, tham gia nhiều game show nhưƠn giời cậu đây rồi, Nhanh như chớp.
+
+Năm 2008, Châu Việt Cường là một trong số những nghệ sĩ gây ồn ào làng giải trí vì sử dụng ma túy dẫn đến bị ảo giác, rồi dùng tỏi nhét vào miệng một cô gái khiến cô này tử vong. Nam ca sĩ lãnh án 13 năm tù.
+
+Diễn viên Hiệp "gà" cũng gần như đánh mất nghiệp diễn vì nghiện ngập. Anh từng đầu quân cho Nhà hát Tuổi trẻ, được trao giải trongGala cườicủa 2 năm (2004, 2005). Tuy nhiên, giữa lúc tên tuổi được đông đảo công chúng mến mộ, Hiệp "gà" sa vào tệ nạn.
+
+Năm 2007, nam diễn viên bị bắt vì tội tàng trữ ma túy, nhận bản án 2 năm tù. Vừa ra tù, anh trở lại với một vai nhỏ trongTáo quân2009. Sau đó, cái tên Hiệp "gà" cũng lu mờ dần khỏi giới giải trí.
+
+Thời gian qua nhiều vụ tai tiếng, lùm xùm về phát ngôn hay thậm chí vi phạm pháp luật liên quan đến nghệ sĩ khiến công chúng không khỏi bất bình.
+
+Những hành vi lệch chuẩn ngày càng nghiêm trọng, vượt qua khỏi "khung báo động" của Bộ quy tắc ứng xử nghệ sĩ do Bộ Văn hóa, Thể thao và Du lịch (VHTTDL) ban hành năm 2021.
+
+Tại các buổi họp báo thường kỳ quý,Bộ Thông tin và Truyền thông(TT&TT) và Bộ VHTTDL nhiều lần đề cập vấn đề xử lý đối với nghệ sĩ vi phạm chuẩn mực đạo đức, pháp luật.
+
+Cuối năm 2023, đại diện Cục Pháp chế (Bộ VHTTDL) cho biết hai bộ đã phối hợp chặt chẽ đểxây dựngquy trình xử lý (hạn chế phát sóng, biểu diễn, quảng cáo) đối với nghệ sĩ, người có ảnh hưởng trên mạng (KOLs) vi phạm pháp luật, trái thuần phong mỹ tục.
+
+Quy trình xử lý là Bộ TT&TT lập một danh sách nghệ sĩ vi phạm. Bộ VHTTDL dựa trên danh sách này và mức độ vi phạm chuẩn mực đạo đức, vi phạm quy định trong bộ quy tắc ứng xử dành cho người hoạt động nghệ thuật, sẽ có hình thức thông tin, phối hợp với các cơ quan liên quan, các cơ quan báo chí, truyền hình để kiểm soát sự hiện diện của những nghệ sĩ này (từ phương tiện thông tin đại chúng đến các hoạt động xã hội).
+
+Toàn bộ nội dung quy trình đã được xây dựng hoàn tất, lấy ý kiến của các Bộ Công an, Tư pháp và các bộ, ngành liên quan, báo cáo các cấp có thẩm quyền.
+
+Tháng 3, ông Lê Quang Tự Do - Cục trưởng Cục Phát thanh, Truyền hình và Thông tin điện tử (Bộ TT&TT) - cho biết Bộ TT&TT phối hợp với Bộ VHTTDL để triển khai giải pháp hạn chế việc xuất hiện của nghệ sĩ vi phạm trên sóng truyền hình, biểu diễn. Tuy nhiên, đây vẫn là hình thức mới, nhạy cảm, cần thêm chỉ thị để các đơn vị cấp dưới có cơ sở thực hiện quy chế này.
