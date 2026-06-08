@@ -1,39 +1,41 @@
 # Core
 python-dotenv>=1.0.0
 requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
 
-# Task 2 - Crawling
-crawl4ai>=0.3.0
+# Task 2 - Crawling (dùng requests+BS4, crawl4ai là optional)
+# crawl4ai>=0.3.0  # Optional
 
 # Task 3 - Document conversion
-markitdown>=0.1.0
+markitdown[all]>=0.1.0
 
 # Task 4 - Chunking & Indexing
 langchain-text-splitters>=0.2.0
 sentence-transformers>=2.2.0
-weaviate-client>=4.5.0
-# chromadb>=0.4.0        # Alternative
-# faiss-cpu>=1.7.4       # Alternative
+chromadb>=0.5.0       # Dùng ChromaDB thay Weaviate (không cần Docker)
+numpy>=1.26.0
 
 # Task 6 - BM25
 rank-bm25>=0.2.2
 
-# Task 7 - Reranking (choose one)
-# transformers>=4.40.0   # For local reranker models
+# Task 7 - Reranking
+# transformers>=4.40.0   # For local cross-encoder (optional)
 
 # Task 8 - PageIndex
 pageindex>=0.1.0
 
-# Task 10 - Generation
-openai>=1.30.0
-# google-generativeai>=0.5.0  # Alternative: Gemini
+# Task 10 - Generation (FPT Cloud, OpenAI-compatible)
+openai>=1.0.0
+anthropic>=0.40.0      # Giữ lại nếu cần fallback
 
 # Group project - UI
 streamlit>=1.35.0
-# gradio>=4.30.0         # Alternative
-# chainlit>=1.0.0        # Alternative for chatbot
+chainlit>=1.0.0
 
-# Group project - Evaluation (choose one)
+# Group project - Evaluation
 deepeval>=1.0.0
-# ragas>=0.1.0           # Alternative
-# trulens>=1.0.0         # Alternative
+ragas>=0.1.0
+
+# Utilities
+tqdm>=4.66.0
