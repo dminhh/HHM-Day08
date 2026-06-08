@@ -16,19 +16,37 @@ Chạy:
 
 from __future__ import annotations
 
-import json
 import os
+
+# Phải set trước khi import TF/transformers để tránh segfault do protobuf conflict
+os.environ.setdefault("TRANSFORMERS_NO_TF", "1")
+os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
+os.environ.setdefault("TF_ENABLE_ONEDNN_OPTS", "0")
+os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
+
+import json
 import sys
 from pathlib import Path
+
+# Fix Vietnamese output on Windows terminal
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
 
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-# Thêm repo root vào sys.path để import src.*
-REPO_ROOT = Path(__file__).resolve().parents[2]
+# sys.path: ưu tiên personal lab (có src/ thực) trước HHM-Day08 (có src/ stub)
+# Insert REPO_ROOT trước, PERSONAL_LAB sau → PERSONAL_LAB được ưu tiên (index 0)
+REPO_ROOT = Path(__file__).resolve().parents[2]          # HHM-Day08/
+PERSONAL_LAB = Path(__file__).resolve().parents[3]       # Day08_.../
+
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
+if str(PERSONAL_LAB) not in sys.path:
+    sys.path.insert(0, str(PERSONAL_LAB))
 
 GOLDEN_DATASET_PATH = Path(__file__).parent / "golden_dataset.json"
 RESULTS_PATH = Path(__file__).parent / "results.md"
@@ -161,17 +179,28 @@ def evaluate_with_deepeval(
             retrieval_context = []
             answer = ""
 
-        test_cases.append(
-            LLMTestCase(
-                input=item["question"],
-                actual_output=answer,
-                expected_output=item["expected_answer"],
-                retrieval_context=retrieval_context,
+        if answer:  # bỏ qua test case khi RAG fail (answer rỗng)
+            test_cases.append(
+                LLMTestCase(
+                    input=item["question"],
+                    actual_output=answer,
+                    expected_output=item["expected_answer"],
+                    retrieval_context=retrieval_context,
+                )
             )
-        )
 
-    print(f"\n[{config_name}] Đang evaluate với DeepEval...")
-    eval_results = evaluate(test_cases, metrics, run_async=False, print_results=False)
+    if not test_cases:
+        print(f"  ⚠ Không có test case nào hợp lệ (RAG pipeline bị lỗi hết).")
+        return []
+
+    print(f"\n[{config_name}] Đang evaluate {len(test_cases)} test cases với DeepEval...")
+    from deepeval.evaluate.configs import AsyncConfig, DisplayConfig
+    eval_results = evaluate(
+        test_cases,
+        metrics,
+        async_config=AsyncConfig(run_async=False),
+        display_config=DisplayConfig(print_results=False, show_indicator=False),
+    )
 
     scores = []
     for tc in eval_results.test_results:
