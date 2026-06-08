@@ -23,6 +23,9 @@ os.environ.setdefault("TRANSFORMERS_NO_TF", "1")
 os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
 os.environ.setdefault("TF_ENABLE_ONEDNN_OPTS", "0")
 os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")
+# Fix Rich Unicode crash trên Windows terminal (cp1252 không support emoji)
+os.environ.setdefault("NO_COLOR", "1")
+os.environ.setdefault("PYTHONIOENCODING", "utf-8")
 
 import json
 import sys
@@ -52,17 +55,17 @@ GOLDEN_DATASET_PATH = Path(__file__).parent / "golden_dataset.json"
 RESULTS_PATH = Path(__file__).parent / "results.md"
 
 METRIC_KEYS = [
-    "FaithfulnessMetric",
-    "AnswerRelevancyMetric",
-    "ContextualRecallMetric",
-    "ContextualPrecisionMetric",
+    "Faithfulness",
+    "Answer Relevancy",
+    "Contextual Recall",
+    "Contextual Precision",
 ]
 
 METRIC_DISPLAY = {
-    "FaithfulnessMetric": "Faithfulness",
-    "AnswerRelevancyMetric": "Answer Relevance",
-    "ContextualRecallMetric": "Context Recall",
-    "ContextualPrecisionMetric": "Context Precision",
+    "Faithfulness": "Faithfulness",
+    "Answer Relevancy": "Answer Relevance",
+    "Contextual Recall": "Context Recall",
+    "Contextual Precision": "Context Precision",
 }
 
 
@@ -72,6 +75,7 @@ METRIC_DISPLAY = {
 
 def _build_deepeval_llm():
     """Tạo DeepEvalBaseLLM wrapper dùng FPT Cloud làm judge LLM."""
+    import re as _re
     from deepeval.models.base_model import DeepEvalBaseLLM
     from openai import OpenAI
 
@@ -85,21 +89,69 @@ def _build_deepeval_llm():
         def load_model(self):
             return client
 
-        def generate(self, prompt: str, schema=None):
+        def _call_api(self, prompt: str, system: str | None = None, max_tokens: int = 4000) -> str:
+            messages = []
+            if system:
+                messages.append({"role": "system", "content": system})
+            messages.append({"role": "user", "content": prompt})
             response = client.chat.completions.create(
                 model=model_name,
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=2000,
+                messages=messages,
+                max_tokens=max_tokens,
                 temperature=0.1,
             )
             msg = response.choices[0].message
-            text = msg.content or getattr(msg, "reasoning", None) or ""
-            if schema is not None:
+            content = (msg.content or "").strip()
+            reasoning = (
+                getattr(msg, "reasoning", None)
+                or getattr(msg, "reasoning_content", None)
+                or ""
+            ).strip()
+            return content if content else reasoning
+
+        def _extract_json(self, text: str, schema):
+            """Thử nhiều cách extract JSON hợp lệ từ text."""
+            # 1. Parse trực tiếp
+            try:
+                return schema.model_validate_json(text)
+            except Exception:
+                pass
+            # 2. JSON trong markdown fence ```json ... ```
+            md = _re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, _re.DOTALL)
+            if md:
                 try:
-                    return schema.model_validate_json(text)
+                    return schema.model_validate_json(md.group(1))
                 except Exception:
                     pass
-            return text
+            # 3. First {...} block
+            brace = _re.search(r"\{.*\}", text, _re.DOTALL)
+            if brace:
+                try:
+                    return schema.model_validate_json(brace.group())
+                except Exception:
+                    pass
+            return None
+
+        def generate(self, prompt: str, schema=None):
+            if schema is not None:
+                # Yêu cầu model trả JSON thuần, không markdown, không giải thích
+                sys_msg = (
+                    "You are a JSON generator. "
+                    "Respond ONLY with a valid JSON object. "
+                    "No explanation, no markdown, no code fences — raw JSON only."
+                )
+                text = self._call_api(prompt, system=sys_msg)
+                result = self._extract_json(text, schema)
+                if result is not None:
+                    return result
+                # Retry không có system prompt (fallback)
+                text = self._call_api(prompt)
+                result = self._extract_json(text, schema)
+                if result is not None:
+                    return result
+                # Trả text để DeepEval tự parse (trimAndLoadJson)
+                return text
+            return self._call_api(prompt)
 
         async def a_generate(self, prompt: str, schema=None):
             return self.generate(prompt, schema)
@@ -125,12 +177,57 @@ def load_golden_dataset() -> list[dict]:
 # =============================================================================
 
 def _run_rag(question: str, use_reranking: bool = True) -> dict:
-    """Gọi retrieve() + generate_with_citation() cho 1 câu hỏi."""
+    """
+    Retrieval + generation riêng để kiểm soát use_reranking cho A/B test.
+    generate_with_citation() nhận top_k: int không nhận contexts, nên phải
+    tách thành 2 bước và gọi LLM trực tiếp với contexts đã retrieve.
+    """
     from src.task9_retrieval_pipeline import retrieve
-    from src.task10_generation import generate_with_citation
+    from src.task10_generation import (
+        reorder_for_llm,
+        format_context,
+        SYSTEM_PROMPT,
+        OPENAI_API_KEY,
+        OPENAI_BASE_URL,
+        LLM_MODEL,
+        MAX_TOKENS,
+        TEMPERATURE,
+        TOP_P,
+    )
+    from openai import OpenAI
 
-    contexts = retrieve(question, top_k=5, use_reranking=use_reranking)
-    return generate_with_citation(question, contexts)
+    # Step 1: Retrieve với config A/B tương ứng
+    chunks = retrieve(question, top_k=5, use_reranking=use_reranking)
+    if not chunks:
+        return {"answer": "", "sources": [], "retrieval_source": "none"}
+
+    # Step 2-4: Reorder + format + gọi LLM (giống task10 nhưng dùng chunks đã retrieve)
+    reordered = reorder_for_llm(chunks)
+    context_str = format_context(reordered)
+    user_message = (
+        f"Context từ cơ sở tri thức:\n\n{context_str}\n\n"
+        f"{'='*60}\n\nCâu hỏi: {question}"
+    )
+
+    client = OpenAI(api_key=OPENAI_API_KEY, base_url=OPENAI_BASE_URL)
+    response = client.chat.completions.create(
+        model=LLM_MODEL,
+        max_tokens=MAX_TOKENS,
+        temperature=TEMPERATURE,
+        top_p=TOP_P,
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": user_message},
+        ],
+    )
+
+    msg = response.choices[0].message
+    answer = msg.content or getattr(msg, "reasoning", None) or ""
+    return {
+        "answer": answer,
+        "sources": chunks,
+        "retrieval_source": chunks[0].get("source", "hybrid"),
+    }
 
 
 # =============================================================================
@@ -194,12 +291,13 @@ def evaluate_with_deepeval(
         return []
 
     print(f"\n[{config_name}] Đang evaluate {len(test_cases)} test cases với DeepEval...")
-    from deepeval.evaluate.configs import AsyncConfig, DisplayConfig
+    from deepeval.evaluate.configs import AsyncConfig, DisplayConfig, ErrorConfig
     eval_results = evaluate(
         test_cases,
         metrics,
         async_config=AsyncConfig(run_async=False),
         display_config=DisplayConfig(print_results=False, show_indicator=False),
+        error_config=ErrorConfig(ignore_errors=True),
     )
 
     scores = []
@@ -208,6 +306,14 @@ def evaluate_with_deepeval(
         for m in tc.metrics_data:
             row[m.name] = round(m.score or 0.0, 4)
         scores.append(row)
+
+    # In tóm tắt điểm trung bình để debug
+    if scores:
+        for key in METRIC_KEYS:
+            vals = [s.get(key, None) for s in scores]
+            valid = [v for v in vals if v is not None]
+            avg = round(sum(valid) / len(valid), 4) if valid else "N/A (key not found)"
+            print(f"  {METRIC_DISPLAY.get(key, key)}: avg={avg} ({len(valid)}/{len(scores)} có điểm)")
 
     return scores
 
