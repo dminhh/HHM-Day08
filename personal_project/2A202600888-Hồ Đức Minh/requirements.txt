@@ -1,0 +1,17 @@
+requests
+beautifulsoup4
+crawl4ai
+markitdown
+langchain-text-splitters
+langchain-community
+sentence-transformers
+weaviate-client
+rank-bm25
+pageindex
+python-dotenv
+openai
+tqdm
+docx2txt
+textract
+mammoth
+olefile
