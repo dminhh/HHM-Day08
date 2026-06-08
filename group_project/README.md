@@ -180,10 +180,28 @@ run_dashboard()
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Nguyễn Đức Hiếu | 2A202600680 | Chatbot UI (Streamlit/Chainlit) + conversation memory + tích hợp pipeline các thành viên | Chưa bắt đầu |
+| Nguyễn Thành Huy | 2A202600764 | Golden dataset (≥15 Q&A) + eval_pipeline.py + chạy 4 metrics (Faithfulness, Answer Relevance, Context Recall, Context Precision) | Chưa bắt đầu |
+| Hồ Đức Minh | 2A202600888 | A/B comparison (≥2 configs) + results.md (bảng điểm + worst performers) + README + architecture diagram | Chưa bắt đầu |
+
+### Chi Tiết Nhiệm Vụ
+
+#### Nguyễn Đức Hiếu (2A202600680) — Chatbot UI & Integration
+- [ ] `group_project/app.py` — Streamlit hoặc Chainlit app
+- [ ] Tích hợp `retrieve()` (Task 9) và `generate_with_citation()` (Task 10) từ pipeline cá nhân
+- [ ] Conversation memory (lưu lịch sử chat, hỗ trợ follow-up questions)
+- [ ] Hiển thị source documents và relevance score
+- [ ] `group_project/requirements.txt`
+
+#### Nguyễn Thành Huy (2A202600764) — Golden Dataset & Evaluation
+- [ ] `group_project/evaluation/golden_dataset.json` — ≥15 cặp Q&A (question, expected_answer, expected_context)
+- [ ] `group_project/evaluation/eval_pipeline.py` — script chạy evaluation (DeepEval / RAGAS / TruLens)
+- [ ] Chạy đủ 4 metrics: Faithfulness, Answer Relevance, Context Recall, Context Precision
+
+#### Hồ Đức Minh (2A202600888) — A/B Comparison & Report
+- [ ] A/B comparison ≥2 configs (vd: có/không reranking, hybrid vs dense-only)
+- [ ] `group_project/evaluation/results.md` — bảng điểm + phân tích worst performers + đề xuất cải tiến
+- [ ] Cập nhật `group_project/README.md` — kiến trúc hệ thống + hướng dẫn chạy
 
 ---
 
